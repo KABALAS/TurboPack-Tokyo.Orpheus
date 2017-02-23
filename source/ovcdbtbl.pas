@@ -3690,7 +3690,6 @@ begin
     Exit;
 
   {decide whether there's anything to do to the visible display}
-  DoIt := False;
   case Action of
     taGeneral :
       DoIt := True;
@@ -3909,11 +3908,6 @@ begin
       Exit;
 
     {draw the box round the cell}
-    ActRowOfs    := 0;
-    ActRowBottom := 0;
-    ActColOfs    := 0;
-    ActColRight  := 0;
-
     with Canvas do begin
       {get the correct grid pen}
       if (otsFocused in tbState) then begin

@@ -1760,8 +1760,6 @@ begin
     W := Self.Width;
     H := Self.Height;
   end else begin
-    W := 0;
-    H := 0;
     case FTabOrientation of
       toTop :
         begin

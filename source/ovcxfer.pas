@@ -600,7 +600,6 @@ function TOvcTransfer.xfrGetComponentDataSize(C : TComponent; xfrStringtype : Tx
    -Changes
     03/2011, AB: New parameter 'xfrStringtype' defines the datatype used to store strings }
 begin
-  Result := 0;
   if C is TEdit then begin
     case xfrStringtype of
       xfrString:

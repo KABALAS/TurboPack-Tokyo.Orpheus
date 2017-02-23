@@ -451,10 +451,6 @@ procedure TOvcSingleCaret.Reinit;
     if (not Assigned(FCaretType)) then
       Exit;
 
-    {inits}
-    NewXOfs := 0;
-    NewYOfs := 0;
-
     with FCaretType do
       begin
         {stop recursion}

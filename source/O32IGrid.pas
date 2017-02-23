@@ -6666,7 +6666,6 @@ end;
 
 function TO32CustomInspectorGrid.EditorMatchesType(Index: Integer): Boolean;
 begin
-  result := false;
   case TO32InspectorItem(FItems.VisibleItems[Index]).ItemType of
     { There should be no editor for parent and set types }
     itParent, itSet:  result := (FInplaceEdit = nil);
