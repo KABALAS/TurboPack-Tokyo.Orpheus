@@ -2317,6 +2317,7 @@ procedure TOvcCustomTable.tbColChanged(Sender : TObject; ColNum1, ColNum2 : TCol
       Exit;
     end;
     {make sure there's no flicker}
+    DoIt := False;
     AllowRedraw := false;
     try
       {decide whether there's anything to do to the visible display}
@@ -2446,6 +2447,7 @@ procedure TOvcCustomTable.tbRowChanged(Sender : TObject; RowNum1, RowNum2 : TRow
       Exit;
     end;
     {make sure there's no flicker}
+    DoIt := False;
     AllowRedraw := false;
     try
       {decide whether there's anything to do to the visible display}
@@ -4540,6 +4542,10 @@ procedure TOvcCustomTable.tbDrawActiveCell;
             Wd := tbColNums^.Ay[succ(ColInx)].Offset - ColOfs;
 
             {calculate where to draw the vertical/horizontal lines}
+            ActRowOfs := 0;
+            ActRowBottom := 0;
+            ActColOfs := 0;
+            ActColRight := 0;
             case GridPenSet.NormalGrid.Effect of
               geNone      : begin
                               ActRowOfs := RowOfs;

@@ -3690,6 +3690,7 @@ begin
     Exit;
 
   {decide whether there's anything to do to the visible display}
+  DoIt := False;
   case Action of
     taGeneral :
       DoIt := True;
@@ -3927,6 +3928,10 @@ begin
       Wd := VisibleColumns[Idx].Width;
 
       {calculate where to draw the vertical/horizontal lines}
+      ActRowOfs := 0;
+      ActRowBottom := 0;
+      ActColOfs := 0;
+      ActColRight := 0;
       case GridPenSet.NormalGrid.Effect of
         geNone      : begin
                         ActRowOfs := RowOfs;
